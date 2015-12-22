@@ -1,0 +1,14 @@
+PODS:
+  - BindViewControllerToView (0.1.0)
+
+DEPENDENCIES:
+  - BindViewControllerToView (from `../`)
+
+EXTERNAL SOURCES:
+  BindViewControllerToView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  BindViewControllerToView: 486c26c58ccba8421faeed55b394e508d890cb35
+
+COCOAPODS: 0.39.0

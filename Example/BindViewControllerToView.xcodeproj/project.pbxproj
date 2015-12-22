@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5251C211B1CD500644F836B1 /* Pods_BindViewControllerToView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45526FD2D3DC5E815E10E8C /* Pods_BindViewControllerToView_Example.framework */; };
+		5E55DF401C283B14002AC5B6 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55DF3C1C283B14002AC5B6 /* CollectionViewController.swift */; };
+		5E55DF411C283B14002AC5B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55DF3D1C283B14002AC5B6 /* ViewController.swift */; };
+		5E55DF421C283B14002AC5B6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55DF3E1C283B14002AC5B6 /* TableViewController.swift */; };
+		5E55DF431C283B14002AC5B6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55DF3F1C283B14002AC5B6 /* ViewModel.swift */; };
+		5E55DF451C283B2D002AC5B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E55DF441C283B2D002AC5B6 /* Main.storyboard */; };
+		5E55DF471C28455B002AC5B6 /* MyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55DF461C28455B002AC5B6 /* MyCollectionCell.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
@@ -29,19 +33,23 @@
 
 /* Begin PBXFileReference section */
 		268061D9042ED529F3F33B8B /* Pods-BindViewControllerToView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BindViewControllerToView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BindViewControllerToView_Example/Pods-BindViewControllerToView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		5E55DF3C1C283B14002AC5B6 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		5E55DF3D1C283B14002AC5B6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5E55DF3E1C283B14002AC5B6 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		5E55DF3F1C283B14002AC5B6 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		5E55DF441C283B2D002AC5B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5E55DF461C28455B002AC5B6 /* MyCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionCell.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* BindViewControllerToView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BindViewControllerToView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		607FACE51AFB9204008FA782 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Tests.xctest; path = BindViewControllerToView_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACE51AFB9204008FA782 /* BindViewControllerToView_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BindViewControllerToView_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		67BD06167DB8860A357CE672 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		6C83ED4E9880756E8DAE1799 /* Pods-BindViewControllerToView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BindViewControllerToView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BindViewControllerToView_Tests/Pods-BindViewControllerToView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		7837D9E9CFA3986E4CA1F88A /* BindViewControllerToView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BindViewControllerToView.podspec; path = ../BindViewControllerToView.podspec; sourceTree = "<group>"; };
+		7837D9E9CFA3986E4CA1F88A /* BindViewControllerToView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = BindViewControllerToView.podspec; path = ../BindViewControllerToView.podspec; sourceTree = "<group>"; };
 		7EB13248EAD6EE422B8BDBE5 /* Pods_BindViewControllerToView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BindViewControllerToView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B40836B8B4BD656BF6FFA092 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		CFB3CB3767D8601AD40D6C92 /* Pods-BindViewControllerToView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BindViewControllerToView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BindViewControllerToView_Tests/Pods-BindViewControllerToView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,7 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD01AFB9204008FA782 /* BindViewControllerToView_Example.app */,
-				607FACE51AFB9204008FA782 /* Tests.xctest */,
+				607FACE51AFB9204008FA782 /* BindViewControllerToView_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,8 +102,12 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				5E55DF3C1C283B14002AC5B6 /* CollectionViewController.swift */,
+				5E55DF461C28455B002AC5B6 /* MyCollectionCell.swift */,
+				5E55DF3D1C283B14002AC5B6 /* ViewController.swift */,
+				5E55DF3E1C283B14002AC5B6 /* TableViewController.swift */,
+				5E55DF3F1C283B14002AC5B6 /* ViewModel.swift */,
+				5E55DF441C283B2D002AC5B6 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -200,7 +212,7 @@
 			);
 			name = BindViewControllerToView_Tests;
 			productName = Tests;
-			productReference = 607FACE51AFB9204008FA782 /* Tests.xctest */;
+			productReference = 607FACE51AFB9204008FA782 /* BindViewControllerToView_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -209,7 +221,8 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -245,7 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				5E55DF451C283B2D002AC5B6 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -358,8 +371,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				5E55DF431C283B14002AC5B6 /* ViewModel.swift in Sources */,
+				5E55DF411C283B14002AC5B6 /* ViewController.swift in Sources */,
+				5E55DF401C283B14002AC5B6 /* CollectionViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				5E55DF421C283B14002AC5B6 /* TableViewController.swift in Sources */,
+				5E55DF471C28455B002AC5B6 /* MyCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,14 +399,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -422,6 +431,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -490,6 +500,7 @@
 				INFOPLIST_FILE = BindViewControllerToView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -502,6 +513,7 @@
 				INFOPLIST_FILE = BindViewControllerToView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -521,6 +533,7 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BindViewControllerToView_Example.app/BindViewControllerToView_Example";
 			};
@@ -537,6 +550,7 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BindViewControllerToView_Example.app/BindViewControllerToView_Example";
 			};
