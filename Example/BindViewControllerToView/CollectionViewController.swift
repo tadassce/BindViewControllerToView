@@ -13,7 +13,7 @@ private let reuseIdentifier = "Cell"
 
 class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
-	var viewModelCollection = ViewModelCollection()
+  var model: [String] = ["Hello World", "Hello World", "Hello World", "Hello World", "Hello World", "Hello World", "Hello World", "Hello World", "Hello World", "Hello World", "Hello World", "Hello World", "Hello World", "Hello World", "Hello World", "Hello World", "Hello World", "Hello World"]
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -31,15 +31,15 @@ extension CollectionViewController {
 	}
 
 	override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return viewModelCollection.viewModels.count
+		return model.count
 	}
 
 	override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
 
 		if let cell = cell as? MyCollectionCell {
-			cell.bind(toViewModel: viewModelCollection.viewModels[indexPath.item])
-		}
+      cell.viewController?.model = model[indexPath.item]
+    }
 
 		return cell
 	}

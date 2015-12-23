@@ -8,39 +8,77 @@
 
 import UIKit
 
-public protocol BindableView {
+private var bindableViewControllerKey: UInt8 = 0
 
-	var viewController: BindableViewController? { get set }
+public protocol BindableView: class {
+  typealias E
 
-	func bind(viewControllerType viewControllerType: BindableViewController.Type, toView view: UIView) -> UIViewController?
-	func bind(toViewModel viewModel: BindableViewModel)
+  var viewController: E? { get set }
 
+  func instantiateViewController() -> E?
+  func layoutViewController()
 }
 
-public extension BindableView {
+public extension BindableView where Self: UIView, E: UIViewController {
+  public var viewController: E? {
+    get {
+      return objc_getAssociatedObject(self, &bindableViewControllerKey) as? E
+    }
+    set {
+      bv_removeViewController()
+      objc_setAssociatedObject(self, &bindableViewControllerKey, newValue,
+        objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+      bv_addViewController()
+    }
+  }
 
-	func bind(viewControllerType type: BindableViewController.Type, toView view: UIView) -> UIViewController? {
-		return helperBind(viewControllerType: type, toView: view)
-	}
+  private func bv_removeViewController() {
+    guard let viewController = viewController else {
+      return
+    }
 
-	func bind(toViewModel viewModel: BindableViewModel) {
-		viewController?.bind(viewModel: viewModel)
-	}
+    viewController.willMoveToParentViewController(nil)
+    viewController.view.removeFromSuperview()
+    viewController.didMoveToParentViewController(nil)
+  }
 
-	internal func helperBind(viewControllerType type: BindableViewController.Type, toView view: UIView) -> UIViewController? {
-		guard let viewController = type.initViewController() as? UIViewController else {
-			return nil
-		}
+  private func bv_addViewController() {
+    guard let viewController = viewController else {
+      return
+    }
 
-		view.addSubview(viewController.view)
+    let parentViewController = findParentViewController()
+    viewController.willMoveToParentViewController(parentViewController)
+    addSubview(viewController.view)
+    viewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-		viewController.view.translatesAutoresizingMaskIntoConstraints = false
+    layoutViewController()
 
-		let views = ["viewControllerView" : viewController.view]
-		view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[viewControllerView]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: views))
-		view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[viewControllerView]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: views))
+    viewController.didMoveToParentViewController(parentViewController)
 
-		return viewController
-	}
-	
+  }
+
+  public func layoutViewController() {
+    guard let viewController = viewController else {
+      return
+    }
+
+    let views = ["viewControllerView" : viewController.view]
+    addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[viewControllerView]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: views))
+    addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[viewControllerView]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: views))
+  }
+
+  // MARK: Helpers
+  private func findParentViewController() -> UIViewController? {
+    var responder: UIResponder = self
+    while !responder.isKindOfClass(UIViewController.self) {
+      if let nextResponder = responder.nextResponder() {
+        responder = nextResponder
+      } else {
+        break
+      }
+    }
+    return responder as? UIViewController
+  }
+
 }

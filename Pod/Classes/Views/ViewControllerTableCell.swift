@@ -8,30 +8,28 @@
 
 import UIKit
 
-public class ViewControllerTableCell<T: BindableViewController>: UITableViewCell, BindableView {
+public class ViewControllerTableCell<T: UIViewController>: UITableViewCell, BindableView {
 
-	public var viewController: BindableViewController?
+  public typealias ViewController = T
 
-	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-		super.init(style: style, reuseIdentifier: reuseIdentifier)
+  public var viewController: ViewController?
 
-		viewController = bind(viewControllerType: T.self, toView: contentView) as? BindableViewController
+  public func instantiateViewController() -> ViewController? {
+    fatalError("instantiateViewController() must be overriden in ViewControllerCollectionCell subclass")
+  }
 
-	}
+  override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-	required public init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
+    viewController = instantiateViewController()
 
-		viewController = bind(viewControllerType: T.self, toView: contentView) as? BindableViewController
-		
-	}
+  }
 
-	/*
-	Subclasses won't be able to redifine this method unless the following hack is done.
-	See more here: http://stackoverflow.com/questions/31795158/swift-2-protocol-extension-not-calling-overriden-method-correctly
-	*/
-	public func bind(viewControllerType type: BindableViewController.Type, toView view: UIView) -> UIViewController? {
-		return helperBind(viewControllerType: type, toView: view)
-	}
+  required public init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
 
+    viewController = instantiateViewController()
+    
+  }
+  
 }

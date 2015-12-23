@@ -70,7 +70,7 @@ struct ViewModel: BindableViewModel {
 
 ## Customization
 
-To provide a custom cell and change how the ViewController's view is bound to the cell subclass ```ViewControllerCollectionCell<T>``` and implement ```func bind(viewControllerType type: BindableViewController.Type, toView view: UIView)```.
+To provide a custom cell and change how the ViewController's view is bound to the cell, subclass ```ViewControllerCollectionCell<T>``` and implement ```func bind(viewControllerType type: BindableViewController.Type, toView view: UIView)```.
 
 ```swift 
 
@@ -97,7 +97,7 @@ pod "BindViewControllerToView"
 
 ## Author
 
-Francisco Gonçalves, @franciscocsg
+Francisco Gonçalves, @franciscocsg
 
 ## License
 

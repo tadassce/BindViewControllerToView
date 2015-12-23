@@ -12,8 +12,6 @@
 		1E1BDA57ABA43EFDE8070DEBE4735CA7 /* Pods-BindViewControllerToView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4690BF5F5B3E453C6EEF08EAC9EDD0 /* Pods-BindViewControllerToView_Tests-dummy.m */; };
 		4EA4B3D6AFA230A0BA49ED1D791895B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		5E55DF341C2839D9002AC5B6 /* BindableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55DF2F1C2839D9002AC5B6 /* BindableView.swift */; };
-		5E55DF351C2839D9002AC5B6 /* BindableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55DF301C2839D9002AC5B6 /* BindableViewController.swift */; };
-		5E55DF361C2839D9002AC5B6 /* BindableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55DF311C2839D9002AC5B6 /* BindableViewModel.swift */; };
 		5E55DF381C2839D9002AC5B6 /* ViewControllerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55DF331C2839D9002AC5B6 /* ViewControllerTableCell.swift */; };
 		5E55DF3B1C283A2C002AC5B6 /* ViewControllerCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55DF3A1C283A2C002AC5B6 /* ViewControllerCollectionCell.swift */; };
 		78E9A44273BC8AAEF5EA3B0BDFEBB46E /* Pods-BindViewControllerToView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E63E4E59328B8F2596CA8B41EECE7D32 /* Pods-BindViewControllerToView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -65,8 +63,6 @@
 		4F6AD3683AFBF0C7F98E7799796D06EC /* BindViewControllerToView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BindViewControllerToView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5937FB4CED1229E8BCC31575B6BE23DC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E55DF2F1C2839D9002AC5B6 /* BindableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindableView.swift; sourceTree = "<group>"; };
-		5E55DF301C2839D9002AC5B6 /* BindableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindableViewController.swift; sourceTree = "<group>"; };
-		5E55DF311C2839D9002AC5B6 /* BindableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindableViewModel.swift; sourceTree = "<group>"; };
 		5E55DF331C2839D9002AC5B6 /* ViewControllerTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerTableCell.swift; path = Views/ViewControllerTableCell.swift; sourceTree = "<group>"; };
 		5E55DF3A1C283A2C002AC5B6 /* ViewControllerCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerCollectionCell.swift; path = Views/ViewControllerCollectionCell.swift; sourceTree = "<group>"; };
 		5FC92B47FE61BD9FC036BF2B8778AFF6 /* BindViewControllerToView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = BindViewControllerToView.modulemap; sourceTree = "<group>"; };
@@ -208,8 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				5E55DF2F1C2839D9002AC5B6 /* BindableView.swift */,
-				5E55DF301C2839D9002AC5B6 /* BindableViewController.swift */,
-				5E55DF311C2839D9002AC5B6 /* BindableViewModel.swift */,
 				5E55DF391C2839F9002AC5B6 /* Cell Views */,
 			);
 			path = Classes;
@@ -421,11 +415,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E55DF3B1C283A2C002AC5B6 /* ViewControllerCollectionCell.swift in Sources */,
-				5E55DF361C2839D9002AC5B6 /* BindableViewModel.swift in Sources */,
 				F673FFB99E584417F96417F6CAF5D742 /* BindViewControllerToView-dummy.m in Sources */,
 				5E55DF341C2839D9002AC5B6 /* BindableView.swift in Sources */,
 				5E55DF381C2839D9002AC5B6 /* ViewControllerTableCell.swift in Sources */,
-				5E55DF351C2839D9002AC5B6 /* BindableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

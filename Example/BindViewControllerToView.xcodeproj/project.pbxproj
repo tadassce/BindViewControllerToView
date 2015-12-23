@@ -10,8 +10,6 @@
 		5251C211B1CD500644F836B1 /* Pods_BindViewControllerToView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45526FD2D3DC5E815E10E8C /* Pods_BindViewControllerToView_Example.framework */; };
 		5E55DF401C283B14002AC5B6 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55DF3C1C283B14002AC5B6 /* CollectionViewController.swift */; };
 		5E55DF411C283B14002AC5B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55DF3D1C283B14002AC5B6 /* ViewController.swift */; };
-		5E55DF421C283B14002AC5B6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55DF3E1C283B14002AC5B6 /* TableViewController.swift */; };
-		5E55DF431C283B14002AC5B6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55DF3F1C283B14002AC5B6 /* ViewModel.swift */; };
 		5E55DF451C283B2D002AC5B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E55DF441C283B2D002AC5B6 /* Main.storyboard */; };
 		5E55DF471C28455B002AC5B6 /* MyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55DF461C28455B002AC5B6 /* MyCollectionCell.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -35,8 +33,6 @@
 		268061D9042ED529F3F33B8B /* Pods-BindViewControllerToView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BindViewControllerToView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BindViewControllerToView_Example/Pods-BindViewControllerToView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5E55DF3C1C283B14002AC5B6 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		5E55DF3D1C283B14002AC5B6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5E55DF3E1C283B14002AC5B6 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		5E55DF3F1C283B14002AC5B6 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		5E55DF441C283B2D002AC5B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E55DF461C28455B002AC5B6 /* MyCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionCell.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* BindViewControllerToView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BindViewControllerToView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,8 +101,6 @@
 				5E55DF3C1C283B14002AC5B6 /* CollectionViewController.swift */,
 				5E55DF461C28455B002AC5B6 /* MyCollectionCell.swift */,
 				5E55DF3D1C283B14002AC5B6 /* ViewController.swift */,
-				5E55DF3E1C283B14002AC5B6 /* TableViewController.swift */,
-				5E55DF3F1C283B14002AC5B6 /* ViewModel.swift */,
 				5E55DF441C283B2D002AC5B6 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -371,11 +365,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E55DF431C283B14002AC5B6 /* ViewModel.swift in Sources */,
 				5E55DF411C283B14002AC5B6 /* ViewController.swift in Sources */,
 				5E55DF401C283B14002AC5B6 /* CollectionViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				5E55DF421C283B14002AC5B6 /* TableViewController.swift in Sources */,
 				5E55DF471C28455B002AC5B6 /* MyCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

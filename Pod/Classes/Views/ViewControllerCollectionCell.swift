@@ -8,31 +8,24 @@
 
 import UIKit
 
-public class ViewControllerCollectionCell<T: BindableViewController>: UICollectionViewCell, BindableView {
+public class ViewControllerCollectionCell<E: UIViewController>: UICollectionViewCell, BindableView {
 
-	public var viewController: BindableViewController?
+  public func instantiateViewController() -> E? {
+    fatalError("instantiateViewController() must be overriden in ViewControllerCollectionCell subclass")
+  }
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 
-		viewController = bind(viewControllerType: T.self, toView: contentView) as? BindableViewController
+		viewController = instantiateViewController()
 
 	}
 	
 	required public init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 
-		viewController = bind(viewControllerType: T.self, toView: contentView) as? BindableViewController
+    viewController = instantiateViewController()
 
-	}
-
-	/*
-	Subclasses won't be able to redifine this method unless the following hack is done.
-	See more: http://stackoverflow.com/questions/31795158/swift-2-protocol-extension-not-calling-overriden-method-correctly
-						http://stackoverflow.com/questions/33702738/method-customization-in-sub-class-not-called
-	*/
-	public func bind(viewControllerType type: BindableViewController.Type, toView view: UIView) -> UIViewController? {
-		return helperBind(viewControllerType: type, toView: view)
 	}
 
 }
