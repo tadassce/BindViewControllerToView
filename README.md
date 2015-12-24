@@ -15,7 +15,6 @@ Start by creating a cell that extends from ViewControllerCollectionCell and para
 
 ```swift
 class MyCollectionCell: ViewControllerCollectionCell<ViewController> {
-
   override func instantiateViewController() -> ViewController? {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let vc = storyboard.instantiateViewControllerWithIdentifier("ViewC") as! ViewController
