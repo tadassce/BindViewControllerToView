@@ -4,82 +4,47 @@
 [![License](https://img.shields.io/cocoapods/l/BindViewControllerToView.svg?style=flat)](http://cocoapods.org/pods/BindViewControllerToView)
 [![Platform](https://img.shields.io/cocoapods/p/BindViewControllerToView.svg?style=flat)](http://cocoapods.org/pods/BindViewControllerToView)
 
-Easily embed any ViewController and its respective ViewModel in a Collection/Table View Cell.
+Easily embed any ViewController in a Collection/Table View Cell.
 
 ## Basic Usage
 To take advantage of this library there are a few steps that you need to follow:
 
+
+### CollectionViewCell
+Start by creating a cell that extends from ViewControllerCollectionCell and parameterize it with the ViewController that you intend to present. 
+
+```swift
+class MyCollectionCell: ViewControllerCollectionCell<ViewController> {
+
+  override func instantiateViewController() -> ViewController? {
+  
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    
+    let vc = storyboard.instantiateViewControllerWithIdentifier("ViewC") as! ViewController
+    
+    return vc
+    
+  }
+  
+}
+```
+
 ### CollectionViewController
 
-Start by registering the cell parametrized with the ViewController that you want to present.
+Then register your cell and you are good to go.
 
 ```swift
 override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		// Register cell classes
-		self.collectionView!.registerClass(ViewControllerCollectionCell<ViewController>.self, forCellWithReuseIdentifier: reuseIdentifier)
+		self.collectionView!.registerClass(MyCollectionCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 	}
 ```
-
-Then bind a ViewModel to the ViewController provided.
-
-```swift
-	override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
-
-		if let cell = cell as? MyCollectionCell {
-			cell.bind(toViewModel: viewModelCollection.viewModels[indexPath.item])
-		}
-
-		return cell
-	}
-```
-
-
-### ViewController
-On the ViewController you need to implement the BindableViewController protocol.
-
-```swift
-extension ViewController: BindableViewController {
-
-	static func initViewController() -> BindableViewController {
-		let storyboard = UIStoryboard(name: "Main", bundle: nil)
-		let vc = storyboard.instantiateViewControllerWithIdentifier("ViewC") as! ViewController
-		return vc
-	}
-
-	func bind(viewModel viewModel: BindableViewModel) {
-		guard let viewModel = viewModel as? ViewModel else {
-			return
-		}
-
-		self.viewModel = viewModel
-	}
-	
-}
-```
-
-### ViewModel
-
-```swift
-struct ViewModel: BindableViewModel {
-	var helloWorld = "Hello World!"
-}
-````
 
 ## Customization
 
-To provide a custom cell and change how the ViewController's view is bound to the cell, subclass ```ViewControllerCollectionCell<T>``` and implement ```func bind(viewControllerType type: BindableViewController.Type, toView view: UIView)```.
-
-```swift 
-
-class MyCollectionCell: ViewControllerCollectionCell<ViewController> {
-	override func bind(viewControllerType type: BindableViewController.Type, toView view: UIView) -> UIViewController? {
-		//implement me
-	}
-}
-```
+As the main purpose of this library is to be used with UICollectionViewControllers or UITableViewControllers it provides already some base classes like ```swift ViewControllerCollectionCell``` and ```swift ViewControllerTableCell```. But it can be used to bind any view to any view controller by making the desired view implement the ```swift BindableView``` protocol.
 
 
 ## Example
