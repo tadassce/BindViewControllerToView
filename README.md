@@ -15,17 +15,11 @@ Start by creating a cell that extends from ViewControllerCollectionCell and para
 
 ```swift
 class MyCollectionCell: ViewControllerCollectionCell<ViewController> {
-
   override func instantiateViewController() -> ViewController? {
-  
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    
     let vc = storyboard.instantiateViewControllerWithIdentifier("ViewC") as! ViewController
-    
     return vc
-    
   }
-  
 }
 ```
 
@@ -35,16 +29,16 @@ Then register your cell and you are good to go.
 
 ```swift
 override func viewDidLoad() {
-		super.viewDidLoad()
-		
-		// Register cell classes
-		self.collectionView!.registerClass(MyCollectionCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-	}
+	super.viewDidLoad()
+	
+	// Register cell classes
+	self.collectionView!.registerClass(MyCollectionCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+}
 ```
 
 ## Customization
 
-As the main purpose of this library is to be used with UICollectionViewControllers or UITableViewControllers it provides already some base classes like ```swift ViewControllerCollectionCell``` and ```swift ViewControllerTableCell```. But it can be used to bind any view to any view controller by making the desired view implement the ```swift BindableView``` protocol.
+As the main purpose of this library is to be used with UICollectionViewControllers or UITableViewControllers it provides already some base classes like ```ViewControllerCollectionCell``` and ```ViewControllerTableCell```. But it can be used to bind any view to any view controller by making the desired view implement the ```BindableView``` protocol.
 
 
 ## Example
