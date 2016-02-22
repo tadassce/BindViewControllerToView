@@ -9,11 +9,10 @@
 import UIKit
 
 private var bindableViewControllerKey: UInt8 = 0
+private var _parentViewController: UIViewController? = nil
 
 public protocol BindableView: class {
   typealias E
-
-  var viewController: E? { get set }
 
   func instantiateViewController() -> E?
   func layoutViewController()
@@ -28,6 +27,15 @@ public extension BindableView where Self: UIView, E: UIViewController {
       bv_removeViewController()
       objc_setAssociatedObject(self, &bindableViewControllerKey, newValue,
         objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
+  }
+
+  public var parentViewController: UIViewController? {
+    get {
+      return _parentViewController
+    }
+    set {
+      _parentViewController = newValue
       bv_addViewController()
     }
   }
@@ -47,8 +55,8 @@ public extension BindableView where Self: UIView, E: UIViewController {
       return
     }
 
-    let parentViewController = findParentViewController()
     viewController.willMoveToParentViewController(parentViewController)
+    parentViewController?.addChildViewController(viewController)
     addSubview(viewController.view)
     viewController.view.translatesAutoresizingMaskIntoConstraints = false
 
@@ -67,18 +75,4 @@ public extension BindableView where Self: UIView, E: UIViewController {
     addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[viewControllerView]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: views))
     addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[viewControllerView]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: views))
   }
-
-  // MARK: Helpers
-  private func findParentViewController() -> UIViewController? {
-    var responder: UIResponder = self
-    while !responder.isKindOfClass(UIViewController.self) {
-      if let nextResponder = responder.nextResponder() {
-        responder = nextResponder
-      } else {
-        break
-      }
-    }
-    return responder as? UIViewController
-  }
-
 }

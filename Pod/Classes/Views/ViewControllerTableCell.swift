@@ -8,13 +8,9 @@
 
 import UIKit
 
-public class ViewControllerTableCell<T: UIViewController>: UITableViewCell, BindableView {
+public class ViewControllerTableCell<E: UIViewController>: UITableViewCell, BindableView {
 
-  public typealias ViewController = T
-
-  public var viewController: ViewController?
-
-  public func instantiateViewController() -> ViewController? {
+  public func instantiateViewController() -> E? {
     fatalError("instantiateViewController() must be overriden in ViewControllerCollectionCell subclass")
   }
 
@@ -31,5 +27,4 @@ public class ViewControllerTableCell<T: UIViewController>: UITableViewCell, Bind
     viewController = instantiateViewController()
     
   }
-  
 }

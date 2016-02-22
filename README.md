@@ -25,7 +25,7 @@ class MyCollectionCell: ViewControllerCollectionCell<ViewController> {
 
 ### CollectionViewController
 
-Then register your cell and you are good to go.
+Then register your cell.
 
 ```swift
 override func viewDidLoad() {
@@ -33,6 +33,23 @@ override func viewDidLoad() {
 	
 	// Register cell classes
 	self.collectionView!.registerClass(MyCollectionCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+}
+```
+
+And set the current view controller as parent view controller.
+
+
+```swift
+override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+		
+	let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+
+	if let cell = cell as? MyCollectionCell {
+      cell.parentViewController = self
+      cell.viewController?.model = model[indexPath.item]
+    }
+
+	return cell
 }
 ```
 

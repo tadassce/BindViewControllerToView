@@ -1,4 +1,4 @@
-	//
+//
 //  ViewControllerCollectionCell.swift
 //  Pods
 //
@@ -13,19 +13,19 @@ public class ViewControllerCollectionCell<E: UIViewController>: UICollectionView
   public func instantiateViewController() -> E? {
     fatalError("instantiateViewController() must be overriden in ViewControllerCollectionCell subclass")
   }
-	
-	override init(frame: CGRect) {
-		super.init(frame: frame)
 
-		viewController = instantiateViewController()
-
-	}
-	
-	required public init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
+  override init(frame: CGRect) {
+    super.init(frame: frame)
 
     viewController = instantiateViewController()
 
-	}
+  }
 
+  required public init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+
+    viewController = instantiateViewController()
+    
+  }
+  
 }

@@ -38,6 +38,7 @@ extension CollectionViewController {
 		let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
 
 		if let cell = cell as? MyCollectionCell {
+      cell.parentViewController = self
       cell.viewController?.model = model[indexPath.item]
     }
 
@@ -49,5 +50,3 @@ extension CollectionViewController {
 	}
 	
 }
-
-
