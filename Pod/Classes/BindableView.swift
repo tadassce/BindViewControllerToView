@@ -12,7 +12,7 @@ private var bindableViewControllerKey: UInt8 = 0
 private var _parentViewController: UIViewController? = nil
 
 public protocol BindableView: class {
-  typealias E
+  associatedtype E
 
   func instantiateViewController() -> E?
   func layoutViewController()
@@ -45,9 +45,9 @@ public extension BindableView where Self: UIView, E: UIViewController {
       return
     }
 
-    viewController.willMoveToParentViewController(nil)
+    viewController.willMove(toParentViewController: nil)
     viewController.view.removeFromSuperview()
-    viewController.didMoveToParentViewController(nil)
+    viewController.didMove(toParentViewController: nil)
   }
 
   private func bv_addViewController() {
@@ -55,14 +55,14 @@ public extension BindableView where Self: UIView, E: UIViewController {
       return
     }
 
-    viewController.willMoveToParentViewController(parentViewController)
+    viewController.willMove(toParentViewController: parentViewController)
     parentViewController?.addChildViewController(viewController)
     addSubview(viewController.view)
     viewController.view.translatesAutoresizingMaskIntoConstraints = false
 
     layoutViewController()
 
-    viewController.didMoveToParentViewController(parentViewController)
+    viewController.didMove(toParentViewController: parentViewController)
 
   }
 
@@ -72,7 +72,7 @@ public extension BindableView where Self: UIView, E: UIViewController {
     }
 
     let views = ["viewControllerView" : viewController.view]
-    addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[viewControllerView]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: views))
-    addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[viewControllerView]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: views))
+    addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[viewControllerView]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: views))
+    addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[viewControllerView]|", options: NSLayoutFormatOptions.init(rawValue: 0), metrics: nil, views: views))
   }
 }
