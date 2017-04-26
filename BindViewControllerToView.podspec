@@ -8,14 +8,14 @@
 
 Pod::Spec.new do |s|
   s.name             = "BindViewControllerToView"
-  s.version          = "0.2.1"
+  s.version          = "0.3.0"
 	s.summary          = "Easily embed any ViewController in a Collection/Table View Cell."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
 #   * Try to keep it short, snappy and to the point.
 #   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
+#   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description      = <<-DESC
 "This library allows you to embed any ViewController in any view."
 "Its main purpose is to allow embeding View Controllers in Cells by providing Collection/TableViewCell base classes that you can extend."
